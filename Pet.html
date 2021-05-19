@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pet Health Certificates</title>
+	<script src="https://kit.fontawesome.com/110b07d79d.js" crossorigin="anonymous"></script>
+	<meta charset="utf-8">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet"> 
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:wght@300&display=swap" rel="stylesheet"> 
+	<style type="text/css">
+		*
+		{
+			box-sizing: border-box;
+			font-family: 'Abel', sans-serif;
+		}
+		html
+		{
+			scroll-behavior: smooth;
+		}
+		body
+		{
+			margin: 0px;
+		}
+		.info-bar
+		{
+			background-color: #fff;
+			text-align: center;
+		}
+		.info-col
+		{
+			width: 29%;
+			padding: 10px;
+			display: inline-block;
+			font-size: 18px;
+		}
+		.icon
+		{
+			color: #72c9e6;
+			font-size: 22px;
+			vertical-align: middle;
+			margin: 5px;
+		}
+		.name
+		{
+			text-align: left;
+			background-color: #f5f5f5;
+			padding-left: 50px;
+		}
+		.main-head
+		{
+			padding: 20px;
+			font-family: 'Newsreader', serif;
+			margin: 0px;
+		}
+		.menu
+		{
+			list-style-type: none;
+			padding: 0px;
+			text-align: center;
+			margin: 0px;
+			padding: 10px;
+			box-shadow: 0px 0px 10px #0001;
+			background-color: #fff;
+		}
+		.menu-container
+		{
+			position: sticky;
+			top: 0;
+		}
+		.menu-item
+		{
+			display: inline-block;
+			padding: 15px;
+			transition: .3s;
+		}
+		.menu-item:hover
+		{
+			transform: scale(1.2);
+		}
+		.menu-link
+		{
+			padding: 15px;
+			color: #000;
+			text-decoration: none;
+		}
+		.menu-button
+		{
+			color: #fff;
+			background-image: linear-gradient(to right, #31b2dd, #006cac);
+			background-color: #72c9e6;
+			padding: 10px;
+			border-radius: 30px;
+			text-decoration: none;
+			background-size: 100%;
+			transition: .3s;
+		}
+		.menu-button:hover
+		{
+			background-size: 700%;
+		}
+		.header
+		{
+			background-image: url(back1.jpg);
+			background-repeat: no-repeat;
+			background-size: cover;
+			height: 600px;
+			animation-name: slid;
+			animation-duration: 8s;
+			animation-iteration-count: infinite;
+			animation-timing-function: linear;
+		}
+		@keyframes slid {
+			25% {background-image: url(back1.jpg);}
+			50% {background-image: url(back2.jpg);}
+			75% {background-image: url(back3.jpg);}
+			100% {background-image: url(back4.jpg);}
+		}
+		.overlay
+		{
+			height: 600px;
+			background-color: #0007;
+		}
+		.head
+		{
+			font-family: 'Newsreader', serif;
+			text-align: center;
+			margin: 20px;
+			padding: 20px;
+			font-size: 50px;
+			font-style: italic;
+		}
+		hr
+		{
+			width: 30%;
+			border: solid #d0d0d0 1px;
+			border-radius: 30px;
+			margin: 20px auto;
+		}
+		.art
+		{
+			font-size: 20px;
+			letter-spacing: 1px;
+			width: 80%;
+			margin: 20px auto;
+		}
+		.about
+		{
+			text-align: center;
+			margin-top: 100px;
+			margin-bottom: 100px;
+		}
+		.cons
+		{
+			margin-top: 100px;
+			margin-bottom: 100px;
+			background-color: #f5f5f5;
+			padding: 20px;
+		}
+		.left
+		{
+			width: 49%;
+			display: inline-table;
+		}
+		.right
+		{
+			width: 50%;
+			display: inline-table;
+			text-align: center;
+		}
+		.box
+		{
+			padding: 20px;
+			background-color: #034;
+			color: #fff;
+			border-radius: 10px;
+			margin: 20px auto;
+			width: 70%;
+			border: solid #034 2px;
+			transition: .3s;
+			cursor: pointer;
+		}
+		.box:hover
+		{
+			border: solid #31b2dd 2px;
+		}
+		.icon2
+		{
+			font-size: 30px;
+			color: #00b5f2;
+			vertical-align: middle;
+			margin-right: 10px;
+		}
+		.overlay
+		{
+			padding-left: 150px;
+		}
+		.qol
+		{
+			color: #fff;
+			font-family: 'Newsreader', serif;
+			font-size: 25px;
+			text-align: center;
+			text-shadow: 0px 0px 3px #000;
+		}
+		.log
+		{
+			padding: 20px;
+			background-image: linear-gradient(140deg, #013859, #4ecdff);
+			width: 500px;
+			text-align: center;
+			box-shadow: 0px 0px 10px #000;
+		}
+		.feld
+		{
+			padding: 10px;
+			margin: 10px;
+			width: 180px;
+		}
+		.file
+		{
+			color: #555;
+			border: .075rem solid #ddd;
+			padding: 10px;
+			visibility: hidden;
+			position: absolute;
+		}
+		.upload-file
+		{
+			color: #555;
+			padding: 10px;
+			background-color: #fff;
+			border: .075rem solid #ddd;
+			border-radius: 15px 0px 0px 15px;
+		}
+		.file-area
+		{
+			text-align: center;
+			cursor: pointer;
+		}
+		.container
+		{
+			padding: 30px;
+			text-align: center;
+		}
+		.sec
+		{
+			background-color: #dfdfdf;
+			color: #555;
+			border: .075rem solid #ddd;
+			border-radius: 0px 15px 15px 0px;
+			padding: 10px;
+		}
+		.send
+		{
+			background-color: unset;
+			border: solid 2px #fff;
+			background-color: #fff;
+			padding: 15px;
+			border-radius: 30px;
+			cursor: pointer;
+		}
+		.end
+		{
+			padding: 15px;
+			text-align: center;
+			color: #fff;
+			background-color: #003d55;
+		}
+		.tillend
+		{
+			background-color: #034;
+			margin-top: 100px;
+			text-align: center;
+		}
+		.widj
+		{
+			display: inline-table;
+			width: 29%;
+			padding: 20px;
+			text-align: left;
+		}
+		.art-foo
+		{
+			font-size: 18px;
+			color: #8c8c8c;
+		}
+		.link
+		{
+			display: block;
+			padding: 10px;
+			color: #ddd;
+			text-decoration: none;
+			transition: .3s;
+		}
+		.link:hover
+		{
+			color: #1fc0ff;
+		}
+		.iop
+		{
+			font-size: 25px;
+			border-radius: 30px;
+			border: solid #fff 1px;
+			margin: 10px 0px;
+			padding-left: 20px;
+		}
+	</style>
+</head>
+<body>
+<div class="info-bar">
+	<div class="info-col"><span class="icon fa fa-phone"></span> (+20) 1062315141</div>
+	<div class="info-col"><span class="icon fa fa-envelope"></span> mgameel246800@gmail.com</div>
+	<div class="info-col"><span class="icon fa fa-map-marker-alt"></span> Country, city, street 1</div>
+</div>
+<div class="name">
+	<h1 class="main-head">Pet Health Certificates</h1>
+</div>
+<div class="menu-container">
+	<ul class="menu">
+		<li class="menu-item"><a href="#" class="menu-link">Home</a></li>
+		<li class="menu-item"><a href="#" class="menu-link">About</a></li>
+		<li class="menu-item"><a href="#" class="menu-link">Faq</a></li>
+		<li class="menu-item"><a href="#" class="menu-link">Contact</a></li>
+		<li class="menu-item"><a href="#" class="menu-link">Privacy</a></li>
+		<li class="menu-item"><a href="#" class="menu-link">Servicse</a></li>
+		<li class="menu-item"><a href="#" class="menu-button">Get Certificates</a></li>
+		<li class="menu-item"><a href="#" class="menu-button fa fa-sign-in-alt"></a></li>
+	</ul>
+</div>
+<div class="header">
+	<div class="overlay">
+		<div class="log">
+			<h1 class="qol">Get Pet Health Certificates Now !</h1>
+			<br>
+			<form>
+				<input type="text" placeholder="First name" class="feld">
+				<input type="text" placeholder="Last name" class="feld">
+				<input type="email" placeholder="Email" class="feld">
+				<input type="text" placeholder="Post code" class="feld">
+				<input type="number" placeholder="Phone" class="feld">
+				<div class="container">
+		        <label class="file-area">
+		        <span class="upload-file">Choose file...</span><span class="sec">Browse</span>
+	            <input type="file" name="file1" class="file">
+                </label>
+                <br><br><br>
+                <input type="submit" class="send">
+	        </form>
+  </div>
+			</form>
+		</div>
+	</div>
+</div>
+<div class="about">
+	<h1 class="head">What is Pet Health Certificates ?</h1>
+	<hr>
+	<p class="art">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque congue porta molestie. Etiam vestibulum in nisl scelerisque scelerisque. Sed at dictum velit. Praesent leo sapien, sodales a porta ut, pretium ac dolor. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Sed et facilisis dolor. Sed lectus ligula, eleifend vel egestas ut, dapibus vitae est. Donec eu justo eu neque fermentum bibendum. Fusce enim augue, tincidunt at auctor id, dictum ac diam. </p>
+</div>
+<div class="cons">
+	<div class="left">
+		<h1 class="head">Why Us ?</h1>
+		<hr>
+		<p class="art">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque congue porta molestie. Etiam vestibulum in nisl scelerisque scelerisque. luctus et ultrices posuere cubilia curae; Sed et facilisis dolor. Sed lectus ligula, eleifend vel egestas ut, dapibus vitae est. Donec eu justo eu neque fermentum bibendum. Fusce enim augue, tincidunt at auctor id, dictum ac diam. </p>
+	</div>
+	<div class="right">
+		<div class="box">
+			<span class="icon2 fa fa-fire"></span> Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+		</div>
+		<div class="box">
+			<span class="icon2 fa fa-compass"></span> Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+	    </div>
+		<div class="box">
+			<span class="icon2 fa fa-envira"></span> Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+	    </div>
+	</div>
+</div>
+<div class="cons" style="background-color: #fff;">
+	<h1 class="head">Faq</h1>
+	<hr>
+	<br>
+	<details class="box">
+	    <summary>Lorem ipsum dolor sit amet ?</summary>
+	    <br>
+	    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque congue porta molestie. Etiam vestibulum in nisl scelerisque scelerisque.
+    </details>
+	<details class="box">
+	    <summary>Lorem ipsum dolor sit amet ?</summary>
+	    <br>
+	    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque congue porta molestie. Etiam vestibulum in nisl scelerisque scelerisque.
+    </details>
+	<details class="box">
+	    <summary>Lorem ipsum dolor sit amet ?</summary>
+	    <br>
+	    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque congue porta molestie. Etiam vestibulum in nisl scelerisque scelerisque.
+    </details>
+	<details class="box">
+	    <summary>Lorem ipsum dolor sit amet ?</summary>
+	    <br>
+	    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque congue porta molestie. Etiam vestibulum in nisl scelerisque scelerisque.
+    </details>
+	<details class="box">
+	    <summary>Lorem ipsum dolor sit amet ?</summary>
+	    <br>
+	    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque congue porta molestie. Etiam vestibulum in nisl scelerisque scelerisque.
+    </details>
+</div>
+<footer class="tillend">
+	<div class="widj">
+		<h1 class="head" style="color: #fff;">Logo here</h1>
+		<p class="art-foo">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque congue porta molestie. Etiam vestibulum in nisl scelerisque scelerisque. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque congue porta molestie. Etiam vestibulum in nisl scelerisque scelerisque.</p>
+	</div>
+	<div class="widj">
+		<h1 class="head" style="color: #fff;">Links</h1>
+		<a href="#" class="link">Home</a>
+		<a href="#" class="link">About</a>
+		<a href="#" class="link">Contact</a>
+		<a href="#" class="link">Privacy</a>
+		<a href="#" class="link">Servicse</a>
+	</div>
+	<div class="widj">
+		<h1 class="head" style="color: #fff;">Follow us</h1>
+		<a href="#" class="link iop fa fa-facebook-square"> &nbsp;&nbsp;&nbsp;facebook</a>
+		<a href="#" class="link iop fa fa-instagram"> &nbsp;&nbsp;&nbsp;instagram</a>
+		<a href="#" class="link iop fa fa-twitter-square"> &nbsp;&nbsp;&nbsp;twitter</a>
+	</div>
+</footer>
+<footer class="end">Copywrite 2021 &copy; All Right Reserved</footer>
+</body>
+</html>
